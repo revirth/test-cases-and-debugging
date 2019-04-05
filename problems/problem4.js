@@ -24,9 +24,9 @@ f(["abc", 0]); // a
 
 */
 function f(arr) {
-  // if (Array.isArray(arr) && arr.length !== 2) return undefined; // too strict ?
+  // if (Array.isArray(arr) === false || arr.length !== 2) return undefined; // too strict ?
 
-  if (Array.isArray(arr) && arr.length < 2) return undefined;
+  if (Array.isArray(arr) === false || arr.length < 2) return undefined;
 
   let str = arr[0];
   let idx = arr[1];
