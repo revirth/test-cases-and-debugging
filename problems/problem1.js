@@ -7,14 +7,7 @@ let isLetter = x => x.toLowerCase() !== x.toUpperCase();
 
 // Make this function return the first letter of the string that is passed to it. If the string does not have a first letter, return undefined
 function f(str) {
-
-    for (let i = 0; i < str.length; i++) {
-        const ch = str[i];
-
-        if( isLetter(ch) ) return ch;
-    }
-
-    return undefined;
+    return str.trim().split('').filter(ch=>isLetter(ch))[0];
 }
 
 function runTest(i) {
