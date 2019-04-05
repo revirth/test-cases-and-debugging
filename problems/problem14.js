@@ -48,8 +48,6 @@ function f(str) {
   while (str !== "") {
     ret.push(str.substr(0, 40));
     str = str.substr(41);
-
-    console.log(str);
   }
 
   return ret.join("\n");
@@ -60,7 +58,7 @@ function runTest(i) {
   let expected = outputs[i];
   let actual = f(inputs[i]);
 
-  console.warn(actual, expected);
+  console.log(actual, expected);
 
   verifyEquals(expected, actual);
 }
