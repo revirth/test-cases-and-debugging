@@ -1,13 +1,21 @@
-let verifyEquals = require('./verify-equals.js');
+let verifyEquals = require("./verify-equals.js");
 
-// we need 5 test cases. 
+// we need 5 test cases.
 let inputs = [
-  
-]
+  "hello",
+  "how are you",
+  "abcd",
+  "",
+  "i ekil siht margorp yrev hcum"
+];
 
 let outputs = [
-  
-]
+  "olleh",
+  "uoy era woh",
+  "dcba",
+  "",
+  "much very program this like i"
+];
 
 /*
 Make this function return the input string, reversed. For example "hello" would return "olleh" and "how are you" would return "uoy era woh".
@@ -22,14 +30,20 @@ HINTS:
  
 */
 function f(str) {
-    
+  return str
+    .split("")
+    .reverse()
+    .join("");
 }
 
 function runTest(i) {
-    if(i > inputs.length) throw new Error("You do not have enough test cases");
-    let expected = outputs[i];
-    let actual = f(inputs[i]);
-    verifyEquals(expected, actual)
+  if (i > inputs.length) throw new Error("You do not have enough test cases");
+  let expected = outputs[i];
+  let actual = f(inputs[i]);
+
+  console.log(actual, expected);
+
+  verifyEquals(expected, actual);
 }
 
 runTest(0);
@@ -37,4 +51,4 @@ runTest(1);
 runTest(2);
 runTest(3);
 runTest(4);
-console.log("All tests passed for " + __filename)
+console.log("All tests passed for " + __filename);
