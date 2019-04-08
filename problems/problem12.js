@@ -31,8 +31,11 @@ function f(input) {
   ar2 = input[1];
   ret = [];
 
-  ar1.filter(n => ar2.includes(n) === false).forEach(n => ret.push(n));
-  ar2.filter(n => ar1.includes(n) === false).forEach(n => ret.push(n));
+  // ar1.filter(n => ar2.includes(n) === false).forEach(n => ret.push(n));
+  // ar2.filter(n => ar1.includes(n) === false).forEach(n => ret.push(n));
+
+  ret = ret.concat(ar1.filter(n => ar2.includes(n) === false));
+  ret = ret.concat(ar2.filter(n => ar1.includes(n) === false));
 
   return ret;
 }
